@@ -70,13 +70,38 @@ body {
   color: #2c2b2b;
 }
 
-.navigation-list__item:hover,
-.navigation-list__item:focus {
-  text-decoration: underline;
-}
-
 .navigation-list__item:active {
   color: #3a3939;
+}
+
+/* li:before {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+} */
+
+.transition:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+
+/* li:hover:before {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.5);
+} */
+
+.transition:hover:after {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .main-index {
