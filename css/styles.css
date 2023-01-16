@@ -230,7 +230,7 @@ table {
   color: #2f5a88;
 }
 
-@keyframes color-change {
+/* @keyframes color-change {
   0% {
     fill: #edc655;
   }
@@ -244,15 +244,19 @@ table {
 
 .sun {
   animation: 4s color-change infinite alternate linear;
-}
+} */
 
 @keyframes cloud-move {
   from {
-    transform: translate(0, 50px);
+    transform: translate(0, 150px);
   }
   to {
-    transform: translate(200px, 50px);
+    transform: translate(400px, 50px);
   }
+}
+
+#path22, #path24, #path26 {
+  animation: 10s cloud-move infinite alternate linear
 }
 
 .cloud-front {
@@ -268,6 +272,27 @@ table {
   }
 }
 
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+#path22, #path24, #path26 {
+  animation: 10s cloud-move-reverse infinite alternate linear
+}
+
+.svg {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+.svg-credit {
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center
+}
+
 .page-footer {
   clear: both;
   display: flex;
@@ -278,10 +303,6 @@ table {
   position: fixed;
   width: 100%;
   bottom: 0;
-}
-
-.cloud-back {
-  animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
 .footer-paragraph {
