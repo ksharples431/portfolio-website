@@ -1,22 +1,26 @@
 /*
-Colors used
-background color: #c7cde0;
-header color: #4c7b8b;
-font light: color: #f9fdf9;
-font dark: color: #2c2b2b;
-button color: #2f5a88
-
-others
+Other Colors 
 color: #9eacbc;
-color: #c7cde0;
 color: #357b70;
-color: #2f5a88;
+color: #598053
 
+Fonts
 Amatic SC
 Josefin sans
-#2e5a88
-#598053
  */
+
+ :root {
+  --page-background-color: #c7cde0;
+  --page-font-color-dark: #2c2b2b;
+  --header-background-color: #4c7b8b;
+  --page-font-color-light: #f9fdf9;
+  --header-transition-color: rgba(255, 255, 255, 0.5);
+  --work-background-color: #d3d3d3;
+  --link-color: #2f5a88;
+  --link-focus-color: #4c7b8b;
+  --button-background-color: #2f5a88;
+  --footer-background-color: #61799c;
+ }
 
 * {
   box-sizing: border-box;
@@ -27,8 +31,8 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
-  background-color: #c7cde0;
-  color: #080808;
+  background-color: var(--page-background-color);
+  color: var(--page-font-color);
   margin-bottom: 105px;
 }
 
@@ -36,7 +40,7 @@ body {
   display: flex;
   width: 100%;
   padding: 20px;
-  background-color: #4c7b8b;
+  background-color: var(--header-background-color);
 }
 
 .page-header__item {
@@ -61,17 +65,17 @@ body {
 
 .navigation-list__item {
   text-transform: uppercase;
-  color: #2c2b2b;
+  color: var(--page-font-color-light);
   text-decoration: none;
   font-size: 20px;
 }
 
 .navigation-list__item:visited {
- color: #f9fdf9;
+ color: var(--page-font-color-dark)
 }
 
 .navigation-list__item:active {
-  color: #3a3939;
+  color: var(--page-font-color-dark);
 }
 
 /* li:before {
@@ -96,12 +100,12 @@ body {
 
 /* li:hover:before {
 	width: 100%;
-	background: rgba(255, 255, 255, 0.5);
+	background: var(--header-transition-color);
 } */
 
 .transition:hover:after {
 	width: 100%;
-	background: rgba(255, 255, 255, 0.5);
+	background: var(--header-transition-color);
 }
 
 .main-index {
@@ -146,7 +150,7 @@ h1 {
   }
 
   .grid__item {
-    background-color: lightgray;
+    background-color: var(--work-background-color);
     padding: 20px;
     width: auto;
     min-height: auto;
@@ -160,17 +164,17 @@ h1 {
 }
 
 .portfolio-link {
-  color: #2f5a88;
+  color: var(--link-color);
 }
 
 .portfolio-link:hover,
 .portfolio-link:focus {
-  color: #4c7b8b;
+  color: var(--link-focus-color);
   text-decoration: none;
 }
 
 .portfolio-link:active {
-  color: #2f5a88;
+  color: var(--link-color);
 }
 
 .about-main-content {
@@ -194,12 +198,11 @@ table {
   border: none;
   display: inline-block;
   font-family: inherit;
-  background-color: #2e5a88;
-  color: white;
+  background-color: var(--button-background-color);
+  color: var(--page-font-color-light);
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: 0.5s opacity;
 }
 
@@ -217,17 +220,17 @@ table {
 }
 
 .contact-links__item {
-  color: #2f5a88;
+  color: var(--link-color);
 }
 
 .contact-links__item:hover,
 #contact-links__item:focus {
-  color: #4c7b8b;
+  color: var(--link-focus-color);
   text-decoration: none;
 }
 
 .contact-links:active {
-  color: #2f5a88;
+  color: var(--link-color);
 }
 
 @keyframes cloud-move {
@@ -272,7 +275,7 @@ table {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #5c769a;
+  background-color: var(--footer-background-color);
   margin-top: auto;
   position: fixed;
   width: 100%;
@@ -280,7 +283,7 @@ table {
 }
 
 .footer-paragraph {
-  color: black;
+  color: var(--page-font-color-dark);
 }
 
 @media all and (max-width: 500px) {
