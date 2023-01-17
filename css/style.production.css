@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
 Other Colors 
 color: #9eacbc;
 color: #357b70;
@@ -9,21 +16,9 @@ Amatic SC
 Josefin sans
  */
 
- :root {
-  --page-background-color: #c7cde0;
-  --page-font-color-dark: #2c2b2b;
-  --header-background-color: #4c7b8b;
-  --page-font-color-light: #f9fdf9;
-  --header-transition-color: rgba(255, 255, 255, 0.5);
-  --work-background-color: #d3d3d3;
-  --link-color: #2f5a88;
-  --link-focus-color: #4c7b8b;
-  --button-background-color: #2f5a88;
-  --footer-background-color: #61799c;
- }
-
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -31,25 +26,31 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
-  background-color: var(--page-background-color);
-  color: var(--page-font-color-dark);
+  background-color: #c7cde0;
+  color: #2c2b2b;
   margin-bottom: 105px;
 }
 
 .page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   padding: 20px;
-  background-color: var(--header-background-color);
+  background-color: #4c7b8b;
 }
 
 .page-header__item {
-  flex: 0 1 200px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 200px;
+          flex: 0 1 200px;
   height: 120px;
 }
 
 .page-header__item:last-child {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: right;
 }
 
@@ -65,17 +66,17 @@ body {
 
 .navigation-list__item {
   text-transform: uppercase;
-  color: var(--page-font-color-light);
+  color: #f9fdf9;
   text-decoration: none;
   font-size: 20px;
 }
 
 .navigation-list__item:visited {
- color: var(--page-font-color-dark)
+ color: #2c2b2b
 }
 
 .navigation-list__item:active {
-  color: var(--page-font-color-dark);
+  color: #2c2b2b;
 }
 
 /* li:before {
@@ -95,6 +96,8 @@ body {
 	height: 3px;
 	width: 0px;
 	background: transparent;
+	-webkit-transition: width .5s ease, background-color .5s ease;
+	-o-transition: width .5s ease, background-color .5s ease;
 	transition: width .5s ease, background-color .5s ease;
 }
 
@@ -105,7 +108,7 @@ body {
 
 .transition:hover:after {
 	width: 100%;
-	background: var(--header-transition-color);
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .main-index {
@@ -143,14 +146,16 @@ h1 {
 
 @supports (display: grid) {
   .grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
   }
 
   .grid__item {
-    background-color: var(--work-background-color);
+    background-color: #d3d3d3;
     padding: 20px;
     width: auto;
     min-height: auto;
@@ -158,23 +163,30 @@ h1 {
   }
 
   .grid__item:last-child {
+    -ms-grid-column: 3;
     grid-column: 3 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
     grid-row: 1 / 3;
   }
 }
 
 .portfolio-link {
-  color: var(--link-color);
+  color: #2f5a88;
 }
 
-.portfolio-link:hover,
+.portfolio-link:hover {
+  color: #4c7b8b;
+  text-decoration: none;
+}
+
 .portfolio-link:focus {
-  color: var(--link-focus-color);
+  color: #4c7b8b;
   text-decoration: none;
 }
 
 .portfolio-link:active {
-  color: var(--link-color);
+  color: #2f5a88;
 }
 
 .about-main-content {
@@ -193,16 +205,31 @@ table {
   text-align: center;
 }
 
-.submit-button,
+.submit-button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #2f5a88;
+  color: #f9fdf9;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-transition: 0.5s opacity;
+  -o-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+}
+
 .cv-button {
   border: none;
   display: inline-block;
   font-family: inherit;
-  background-color: var(--button-background-color);
-  color: var(--page-font-color-light);
+  background-color: #2f5a88;
+  color: #f9fdf9;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
+  -webkit-transition: 0.5s opacity;
+  -o-transition: 0.5s opacity;
   transition: 0.5s opacity;
 }
 
@@ -220,43 +247,75 @@ table {
 }
 
 .contact-links__item {
-  color: var(--link-color);
+  color: #2f5a88;
 }
 
-.contact-links__item:hover,
+.contact-links__item:hover {
+  color: #4c7b8b;
+  text-decoration: none;
+}
+
 #contact-links__item:focus {
-  color: var(--link-focus-color);
+  color: #4c7b8b;
   text-decoration: none;
 }
 
 .contact-links:active {
-  color: var(--link-color);
+  color: #2f5a88;
+}
+
+@-webkit-keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 150px);
+            transform: translate(0, 150px);
+  }
+  to {
+    -webkit-transform: translate(400px, 50px);
+            transform: translate(400px, 50px);
+  }
 }
 
 @keyframes cloud-move {
   from {
-    transform: translate(0, 150px);
+    -webkit-transform: translate(0, 150px);
+            transform: translate(0, 150px);
   }
   to {
-    transform: translate(400px, 50px);
+    -webkit-transform: translate(400px, 50px);
+            transform: translate(400px, 50px);
   }
 }
 
 #path22, #path24, #path26 {
-  animation: 10s cloud-move infinite alternate linear
+  -webkit-animation: 10s cloud-move infinite alternate linear;
+          animation: 10s cloud-move infinite alternate linear
+}
+
+@-webkit-keyframes cloud-move-reverse {
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
 }
 
 @keyframes cloud-move-reverse {
   from {
-    transform: translate(446px, 48px);
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
   }
   to {
-    transform: translate(100px, 48px);
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
   }
 }
 
 #path22, #path24, #path26 {
-  animation: 10s cloud-move-reverse infinite alternate linear
+  -webkit-animation: 10s cloud-move-reverse infinite alternate linear;
+          animation: 10s cloud-move-reverse infinite alternate linear
 }
 
 .svg {
@@ -272,10 +331,15 @@ table {
 
 .page-footer {
   clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
-  background-color: var(--footer-background-color);
+  background-color: #61799c;
   margin-top: auto;
   position: fixed;
   width: 100%;
@@ -283,16 +347,18 @@ table {
 }
 
 .footer-paragraph {
-  color: var(--page-font-color-dark);
+  color: #2c2b2b;
 }
 
 @media all and (max-width: 500px) {
   .grid {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
+    -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
